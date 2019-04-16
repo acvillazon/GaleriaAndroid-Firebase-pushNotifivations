@@ -142,8 +142,6 @@ public class MainActivity extends AppCompatActivity implements BroadCastReceiver
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Log.d(TAG, "TAMAÑO"+message);
-
                 if(userState.equals("getImages")){
                     try {
                         JSONObject obj = new JSONObject(message);
@@ -157,10 +155,10 @@ public class MainActivity extends AppCompatActivity implements BroadCastReceiver
                             Toast.makeText(getApplicationContext(),"No se han encontrado imagenes para cargar",Toast.LENGTH_LONG).show();
 
                         }
-                        Log.d(TAG, "TAMAÑO"+ja.length());
                         adapterImage = new AdapterImage(getApplicationContext(),jsonArrayImage);
                         recyclerView.setAdapter(adapterImage);
                         adapterImage.notifyDataSetChanged();
+                        Log.d(TAG, "ZAZAZAZA"+ja.length());
 
                     }catch (Exception e){
                         Toast.makeText(getApplicationContext(),"Fallo durante la conversion StringToJson",Toast.LENGTH_LONG).show();
@@ -169,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements BroadCastReceiver
                 }else if(userState.equals("pushToken")){
                     //Toast.makeText(getApplicationContext(),"Se ha unido al Pull de notificaciones!",Toast.LENGTH_LONG).show();
                 }else if(userState.equals("DOWN")){
-                    Toast.makeText(getApplicationContext(),"Servidor sin respuesta o no existen imagenes para cargar",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Servidor sin respuesta",Toast.LENGTH_LONG).show();
 
                 }
             }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="#B2EBF2">
+    android:background="#80cbc4">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

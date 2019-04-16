@@ -56,9 +56,7 @@ public class AdapterImage extends RecyclerView.Adapter<AdapterImage.MyViewHolder
             ImageView imageView = myViewHolder.imageView;
             Glide.with(context)
                     .load(images.get(i))
-                    .centerCrop()
-                    .override(200)
-//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .fitCenter()
                     .placeholder(R.drawable.common_full_open_on_phone)
                     .into(imageView);
         }catch (Exception e) {
